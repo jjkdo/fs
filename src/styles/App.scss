@@ -1,0 +1,236 @@
+@mixin buttonColorGlow($c1, $c2) {
+	color: $c1;
+}
+
+$BGColor: yellow;
+
+.App {
+	text-align: center;
+}
+body,
+html {
+	background-color: $BGColor;
+}
+
+body,
+p,
+input,
+select,
+textarea,
+button {
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: -0.2px;
+	font-size: 16px;
+}
+
+div,
+p {
+	color: black;
+	font-weight: 800;
+}
+
+p {
+	margin: 0;
+}
+
+header {
+	background-color: $BGColor;
+	padding: 5px;
+	padding: 12px 0;
+	text-align: center;
+	height: 55px;
+}
+
+button,
+input {
+	border: 0;
+	outline: 0;
+	font-size: 14px;
+	border-radius: 10px;
+	padding: 16px;
+	background-color: $BGColor;
+	margin: 5px;
+}
+
+.i {
+	position: absolute;
+	padding: 0px;
+	margin-left: 10px;
+}
+
+.heading {
+	display: inline-block;
+	padding: 0px;
+	color: black;
+}
+
+.main-menu-button {
+	display: block;
+	clear: both;
+}
+
+@media screen and (min-width: 550px) {
+	.main-menu-button {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+}
+
+div.menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 50px;
+}
+
+@media screen and (max-width: 550px) {
+	.main-menu-button {
+		width: 50%;
+		margin: 0 auto;
+	}
+	div.menu {
+		margin-top: 100px;
+	}
+}
+
+div.menu.trie ul {
+	margin-bottom: 0px;
+}
+
+div.menu li {
+	display: inline-block;
+}
+
+input {
+	width: 110px;
+	box-sizing: border-box;
+	background: white;
+	transition: all 0.2s ease-in-out;
+	appearance: none;
+	-webkit-appearance: none;
+}
+input:focus {
+	box-shadow: inset 1px 1px 2px black, inset -1px -1px 2px black;
+}
+
+button {
+	color: black;
+	font-weight: bold;
+	box-shadow:5px 5px 20px black;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+button:hover {
+	box-shadow: -2px -2px 5px black, 2px 2px 5px black;
+	color: #3975e4;
+}
+
+#mainBST button:hover {
+	box-shadow: -2px -2px 5px black, 2px 2px 5px black;
+	color: #ffaa00;
+	&.delete {
+		color: #f32020;
+	}
+
+	&.insert {
+		color: #25ff11;
+	}
+
+	&:active {
+		box-shadow: inset 1px 1px 2px black, inset -1px -1px 2px black;
+	}
+}
+
+#mainBST button:hover {
+	@include buttonColorGlow(#4299e1, darkblue);
+}
+
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	transition: all 2s ease-in-out;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	border-radius: 5px;
+	width: 100%;
+	height: 180px;
+	padding: 0 10px;
+	text-align: center;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+	animation: fade_in_show 0.5s;
+}
+
+@keyframes fade_in_show {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.traversal,
+.bstlist {
+	margin: 10px 10px;
+	padding: 16px;
+	border-radius: 20px;
+	color:black;
+}
+
+.traversal ul,
+.bstlist ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	color: black;
+	font-weight: bold;
+}
+
+.traversal li {
+	display: inline;
+	padding: 3px;
+}
+
+.bstlist li {
+	padding: 3px;
+}
+
+.error {
+	color: red;
+}
+
+@media screen and (min-width: 850px) {
+	.traversal {
+		position: absolute;
+		left: 10px;
+		top: 140px;
+	}
+
+	.bstlist {
+		position: absolute;
+		right: 10px;
+		top: 140px;
+	}
+}
+
+#content {
+	display: flex;
+	width:100%;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+
+}	
